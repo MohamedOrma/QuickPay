@@ -1,6 +1,6 @@
 package QuickPay;
 import java.util.*;
-public class QuickPay {
+public class test {
     static Scanner scan =new Scanner(System.in);
     public static void main(String[] args) {
         int userids[]={0,1,2,3,4,5,6,7,8,9};
@@ -15,6 +15,25 @@ public class QuickPay {
         String transactionreceivers[]=new String[100];
         boolean transactionsuccess[]=new boolean[100];
         String favouritecontacts[][]=new String[userids.length][userids.length-1];
-
+          System.out.println("======= Quick Pay =======");
+        System.out.println("1. log in as admin");
+        System.out.println("2. log in as user");
+        System.out.println("3. exit");
+        int login=scan.nextInt();
+        while(login>3||login<1){
+            System.out.println("Please enter a valid number");
+            login=scan.nextInt();
+        }
+        switch(login){
+            case 1:
+            //admin login 
+                break;
+            case 2:
+            //user login
+                break;
+            case 3:
+                System.out.println("Thank you for using Quick Pay");
+                break;
+        }
     }
 }
