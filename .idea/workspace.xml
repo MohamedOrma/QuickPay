@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="834d3cb4-b0c3-4a71-bf69-081f4fc4212b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/QuickPay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickPay/src/QuickPay/QuickPay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickPay/QuickPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/QuickPay/QuickPay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +29,23 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000276354886" />
-      <entry key="MS500" value="1.0400908562699018" />
-      <entry key="S2" value="2.196116408492785" />
-      <entry key="S5" value="3.9169463149475927" />
-      <entry key="S10" value="5.2569749416869005" />
-      <entry key="S30" value="7.188854886475414" />
-      <entry key="S60" value="8.469165522860102" />
-      <entry key="M2" value="9.70982729260831" />
-      <entry key="M5" value="10.896737799814934" />
-      <entry key="M10" value="11.409744730970049" />
-      <entry key="M15" value="11.597248298266857" />
-      <entry key="M30" value="11.793820653839692" />
-      <entry key="H1" value="11.895674494118879" />
-      <entry key="H2" value="11.947523799205884" />
-      <entry key="H4" value="11.973682968763393" />
-      <entry key="D1" value="11.995602816865365" />
-      <entry key="W1" value="11.999371560680432" />
+      <entry key="MS100" value="1.9138314754835792" />
+      <entry key="MS500" value="2.0215144126140756" />
+      <entry key="S2" value="3.1862441573637628" />
+      <entry key="S5" value="4.909893619213467" />
+      <entry key="S10" value="6.252240060720549" />
+      <entry key="S30" value="8.186695939111498" />
+      <entry key="S60" value="9.467893703087135" />
+      <entry key="M2" value="10.709098199879861" />
+      <entry key="M5" value="11.896410506196709" />
+      <entry key="M10" value="12.409573378554946" />
+      <entry key="M15" value="12.597132185737587" />
+      <entry key="M30" value="12.793761613378614" />
+      <entry key="H1" value="12.895644718908343" />
+      <entry key="H2" value="12.947508846701119" />
+      <entry key="H4" value="12.973675476139372" />
+      <entry key="D1" value="12.995601565808283" />
+      <entry key="W1" value="12.999371381901833" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -68,23 +67,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.722328265543144E-6" />
-      <entry key="MS500" value="0.11513015560003784" />
-      <entry key="S2" value="1.57752132279205" />
-      <entry key="S5" value="3.4718616504841253" />
-      <entry key="S10" value="4.956497533279859" />
-      <entry key="S30" value="7.054147489081653" />
-      <entry key="S60" value="8.391802556028223" />
-      <entry key="M2" value="9.666829753121364" />
-      <entry key="M5" value="10.878025970023366" />
-      <entry key="M10" value="11.400077494390738" />
-      <entry key="M15" value="11.59072893014958" />
-      <entry key="M30" value="11.79052224521984" />
-      <entry key="H1" value="11.894015324952743" />
-      <entry key="H2" value="11.946691686915235" />
-      <entry key="H4" value="11.973266276063532" />
-      <entry key="D1" value="11.995533279275815" />
-      <entry key="W1" value="11.999361624559038" />
+      <entry key="MS100" value="0.9138348518100377" />
+      <entry key="MS500" value="1.0952134796870239" />
+      <entry key="S2" value="2.565934533635242" />
+      <entry key="S5" value="4.463809796552502" />
+      <entry key="S10" value="5.9511326024766324" />
+      <entry key="S30" value="8.051728678191084" />
+      <entry key="S60" value="9.390392183286975" />
+      <entry key="M2" value="10.666028800872242" />
+      <entry key="M5" value="11.877669202505553" />
+      <entry key="M10" value="12.399891269082788" />
+      <entry key="M15" value="12.5906028708169" />
+      <entry key="M30" value="12.79045821522032" />
+      <entry key="H1" value="12.893983050866803" />
+      <entry key="H2" value="12.946675483936913" />
+      <entry key="H4" value="12.973258157942583" />
+      <entry key="D1" value="12.995531923933012" />
+      <entry key="W1" value="12.99936143088159" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -96,27 +95,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.QuickPay.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Final_Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.QuickPay.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Final_Project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Final_Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Final_Project" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

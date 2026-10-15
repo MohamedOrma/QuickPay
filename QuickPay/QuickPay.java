@@ -3,6 +3,7 @@ import java.util.*;
 public class QuickPay {
     static Scanner scan =new Scanner(System.in);
     public static void main(String[] args) {
+        int lasttransfer[]={0};
         int userids[]={0,1,2,3,4,5,6,7,8,9};
         String usernames[]={"Ahmed","Mohamed","Youssef","Mostafa","Hasan","Ahmed1","Mazen","Fatma","Doha","Jana"};
         String emails[]={"Ahmed@gmail.com","Mohamed@gmail.com","Youssef@gmail.com","Mostafa@gmail.com","Hasan@gmail.com","Ahmed1@gmail.com","Mazen@gmail.com","Fatma@gmail.com","Doha@gmail.com","Jana@gmail.com"};
@@ -10,34 +11,43 @@ public class QuickPay {
         String passwords[]={"000000","000001","000002","000003","000004","000005","000006","000007","000008","000009"};
         long balanceinpiastre[]={1000000,500000,2000000,1500000,100000,120000,250000,380000,1300000,300000};
         boolean active[]={true,true,true,false,true,true,true,false,true,true};
-        String transactionsids[]={"1234","1000","1012","1050"};
-        String transactionsenders[]={"Ahmed","Youssef","Ahmed1","Fatma"};
-        String transactionreceivers[]={"Mohamed","Ahmed","Mazen","Ahmed1"};
-        boolean transactionsuccess[]={true,true,false,true};
-        long transactionamounts[]={100000,500000,150000,150000};
+        String transactionsids[]=new String[100];
+        transactionsids[0]="0101";
+        String transactionsenders[]=new String[100];
+        transactionsenders[0]="Ahmed@gmail.com";
+        String transactionreceivers[]=new String[100];
+        transactionreceivers[0]="Mohamed@gmail.com";
+        boolean transactionsuccess[]=new boolean[100];
+        transactionsuccess[0]=true;
+        long transactionamounts[]=new long[100];
+        transactionamounts[0]=100000;
         String favouritecontacts[][]=new String[userids.length][userids.length-1];
         String adminusername="ADMIN";
         String adminpassword="1234";
-        System.out.println("======= Quick Pay =======");
+        boolean logout=false;
+        do {
+        int login=0;
+            System.out.println("======= Quick Pay =======");
         System.out.println("1. log in as admin");
         System.out.println("2. log in as user");
         System.out.println("3. exit");
         System.out.print("Choose an option:");
-        int login=scan.nextInt();
+        login=scan.nextInt();
         while(login>3||login<1){
             System.out.print("Please enter a valid number:");
             login=scan.nextInt();
             scan.nextLine();
         }
+        scan.nextLine();
         switch(login){
             case 1:
                 //admin login
-                scan.nextLine();
-                System.out.print("Enter enter admin user name:");
+                System.out.print("Enter admin user name:");
                 String username=scan.nextLine();
                 System.out.print("Enter your password:");
                 String password=scan.nextLine();
                 if (username.equals(adminusername)&&password.equals(adminpassword)){
+                    logout=false;
                     System.out.println("====== Admin Panel ======");
                     System.out.println("1. Show Statistics");
                     System.out.println("2. Search User");
@@ -55,7 +65,7 @@ public class QuickPay {
                         operation= scan.nextInt();
                     }
                     boolean running=true;
-                    while(running){
+                    while(running&&!logout){
                         switch (operation){
                             case 1:
                                 ShowStatistics(active,transactionsuccess,transactionamounts);
@@ -89,8 +99,10 @@ public class QuickPay {
                                 System.out.print("To exit type false ,to stay type true : ");
                                 running=scan.nextBoolean();
                                 break;
+                            case 9:
+                                logout=true;
                         }
-                        if (running){
+                        if (running&&!logout){
                             System.out.println("====== Admin Panel ======");
                             System.out.println("1. Show Statistics");
                             System.out.println("2. Search User");
@@ -116,11 +128,62 @@ public class QuickPay {
                 break;
             case 2:
                 //user login
+                int index;
+                boolean running=false;
+                boolean loginsuccess=false;
+                do {System.out.print("Enter user name:");
+                username=scan.nextLine();
+                System.out.print("Enter your password:");
+                password=scan.nextLine();
+                index=-1;
+                for (int i=0;i< usernames.length;i++){
+                    if (username.equals(usernames[i])){
+                        index=i;
+                    }
+                }if(index>-1){if (password.equals(passwords[index])){
+                    loginsuccess=true;
+                }}else {
+                    System.out.println("Wrong username or password");
+                }
+                }while (!loginsuccess);
+                do {
+                int operation;
+                do {System.out.println("======User Panel======");
+                System.out.println("1. Show Balance\n" +
+                        "2. Transfer Money\n" +
+                        "3. Transaction History\n" +
+                        "4. Show Favorites\n"+
+                        "5. Add Favorite\n" +
+                        "6. Remove Favorite\n" +
+                        "7. Search Recipient\n" +
+                        "8. View Profile\n" +
+                        "9. Update Profile\n" +
+                        "10. Logout\n\nChoose an option:");
+                operation=scan.nextInt();
+                if (operation>9||operation<1){
+                    System.out.println("invalid input");
+                }
+                }while(operation>9||operation<1);
+                switch (operation){
+                    case 1:
+                        ShowBalance(index,balanceinpiastre);
+                        System.out.print("To exit type false ,to stay type true : ");
+                        running=scan.nextBoolean();
+                        break;
+                    case 2:
+                        TransferMoney(emails,phonenumbers,balanceinpiastre,index,userids,transactionsuccess,lasttransfer,transactionsids,transactionsenders,transactionreceivers,transactionamounts);
+                        System.out.print("To exit type false ,to stay type true : ");
+                        running=scan.nextBoolean();
+                        break;
+                    case 3:
+
+                }}while (running);
                 break;
             case 3:
                 System.out.println("Thank you for using Quick Pay");
                 break;
         }
+        }while (logout);
     }
     static void ShowStatistics(boolean active[],boolean transactionsuccess[],long transactionsamount[]){
         System.out.println("Total number of registered users: "+active.length);
@@ -163,7 +226,7 @@ public class QuickPay {
             operation=scan.nextInt();
         }
         scan.nextLine();
-        int index=-2000;
+        int index=-1;
         switch (operation){
             case 1:
                 System.out.print("enter the id: ");
@@ -296,5 +359,65 @@ public class QuickPay {
                 break;
         }
     }
-
+    static void ShowBalance(int index,long balance[]){
+        System.out.println("Your balance is : "+ balance[index]/100+"."+balance[index]%100);
+    }
+    static void TransferMoney(String emails[],String phonenumbers[],long balances[],int userindex,int userids[],boolean success[],int lasttrans[]
+    ,String transactionid[],String transactionsender[],String transactionreciever[],long transactionamount[]){
+        boolean wrong = true;
+        int transferindex=-1;
+        do {
+        System.out.println("1. email\n2. phone number\n\nchoose a way to transfer: ");
+        int choice = scan.nextInt();
+        scan.nextLine();
+        switch (choice){
+            case 1:
+                System.out.println("Enter the email of the user you are transferring to: ");
+                String email=scan.nextLine();
+                for (int i=0;i< emails.length;i++){
+                    if (email.equals(emails[i])){
+                        transferindex=i;
+                        wrong=false;
+                    }
+                }
+                break;
+            case 2:
+                System.out.println("Enter the phone number of the user you are transferring to: ");
+                String phonenum=scan.nextLine();
+                for (int i=0;i< phonenumbers.length;i++){
+                    if (phonenum.equals(phonenumbers[i])){
+                        transferindex=i;
+                        wrong=false;
+                    }
+                }
+                break;
+        }
+    }while (wrong);
+        boolean issuccess=false;
+        do {
+            System.out.println("Your balance: " + balances[userindex] / 100 + "." + balances[userindex] % 100);
+            System.out.println("Enter the amount you want to transfer in piastre: ");
+            long transfer = scan.nextLong();
+            if (transfer < balances[userindex]) {
+                balances[userindex] -= transfer;
+                balances[transferindex] += transfer;
+                System.out.println("Transferred successfully");
+                lasttrans[0] += 1;
+                success[lasttrans[0]] = true;
+                transactionid[lasttrans[0]] = (userids + "" + transferindex + lasttrans);
+                transactionsender[lasttrans[0]] = emails[userindex];
+                transactionreciever[lasttrans[0]] = emails[transferindex];
+                transactionamount[lasttrans[0]] = transfer;
+                issuccess = true;
+            } else {
+                lasttrans[0] += 1;
+                success[lasttrans[0]] = false;
+                transactionid[lasttrans[0]] = (userids + "" + transferindex + lasttrans);
+                transactionsender[lasttrans[0]] = emails[userindex];
+                transactionreciever[lasttrans[0]] = emails[transferindex];
+                transactionamount[lasttrans[0]] = transfer;
+                System.out.println("Transaction failed");
+            }
+        }while (!issuccess);
+    }
 }
